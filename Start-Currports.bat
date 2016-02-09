@@ -2,11 +2,11 @@
 :: kills the current running CurrPorts program
 taskkill /f /im cports.exe
 
-:: delete yesterdays cports log
-del /Q "C:\Support\Programs\CurrPorts\cports-yesterday.log"
+:: deletes cport log files older than 3 days
+forfiles /P "C:\Support\Programs\CurrPorts" /M *cports.log /D -3 /C "cmd /c del @path"
 
-:: renames todays log file to yesterday
-ren "C:\Support\Programs\CurrPorts\cports.log" "C:\Support\Programs\CurrPorts\cports-yesterday.log
+:: renames cports log file to date format
+for /f "tokens=1-5 delims=/ " %%d in ("%date%") do rename "C:\Support\Programs\CurrPorts\cports.log" %%e-%%f-%%g-cports.txt
 
 :: starts CurrPorts with a customized config file
 start "" C:\Support\Programs\CurrPorts\cports.exe /cfg C:\Support\Programs\CurrPorts\customised.cfg /StartAsHidden 1
