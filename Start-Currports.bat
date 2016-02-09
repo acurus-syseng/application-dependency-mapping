@@ -3,10 +3,12 @@
 taskkill /f /im cports.exe
 
 :: deletes cport log files older than 3 days
-forfiles /P "C:\Support\Programs\CurrPorts" /M *cports.log /D -3 /C "cmd /c del @path"
+del "C:\Support\Programs\CurrPorts\3DaysAgo-cports.log"
 
 :: renames cports log file to date format
-for /f "tokens=1-5 delims=/ " %%d in ("%date%") do rename "C:\Support\Programs\CurrPorts\cports.log" %%e-%%f-%%g-cports.txt
+ren "C:\Support\Programs\CurrPorts\2DaysAgo-cports.log" 3DaysAgo-cports.log
+ren "C:\Support\Programs\CurrPorts\1DayAgo-cports.log" 2DaysAgo-cports.log
+ren "C:\Support\Programs\CurrPorts\cports.log" 1DayAgo-cports.log
 
 :: starts CurrPorts with a customized config file
 start "" C:\Support\Programs\CurrPorts\cports.exe /cfg C:\Support\Programs\CurrPorts\customised.cfg /StartAsHidden 1
