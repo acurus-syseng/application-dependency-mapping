@@ -1,0 +1,10 @@
+path to log file: 
+D:\Share\Collections\Something\ServerName-cports.log
+
+URL: 
+https://collectors.au.sumologic.com/receiver/v1/http/SuperLongCURLURLString
+
+
+
+CURL Command:
+curl -x proxyname:8080 -v -X POST -T "D:\Share\Collections\Something\ServerName-cports.log" https://collectors.au.sumologic.com/receiver/v1/http/SuperLongCURLURLString

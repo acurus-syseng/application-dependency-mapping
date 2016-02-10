@@ -1,0 +1,20 @@
+{
+  "api.version": "v1",
+  "sources":[
+{
+    "name":"CurrPorts_Custom",
+    "category":"CurrPorts_Custom",
+    "automaticDateParsing":true,
+    "multilineProcessingEnabled":true,
+    "useAutolineMatching":true,
+    "forceTimeZone":false,
+    "defaultDateFormat":"dd/MM/yyyy hh:mm:ss a",
+    "timeZone":"Australia/Sydney",
+    "filters":[],
+    "encoding":"UTF-8",
+    "pathExpression":"C:\\Support\\Programs\\CurrPorts\\cports.log",
+    "blacklist":[],
+    "sourceType":"LocalFile"
+  }
+ ]
+}
