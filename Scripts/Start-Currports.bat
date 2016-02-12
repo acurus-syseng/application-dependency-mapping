@@ -2,9 +2,6 @@
 :: kills the current running CurrPorts program
 taskkill /f /im cports.exe
 
-:: delete yesterdays cports log
-:: del /Q "C:\Support\Programs\CurrPorts\cports-yesterday.log"
-
 :: delete oldest cports log (4 days old)
 del /Q "C:\Support\Programs\CurrPorts\cports-4.log"
 
